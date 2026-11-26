@@ -1,0 +1,23 @@
+[app]
+name = "claude.terminal"
+version = "0.1.0"
+summary = "claude.terminal cell: Health, Describe and Count forwarded to the Rust provider ai.provider#claude.terminal. Never runs a paid turn."
+runtime = "script"
+provides = ["claude.terminal"]
+
+[script]
+interpreter = "python3"
+entry = "main.py"
+deps = ["ce-py"]
+
+[daemon]
+enabled = true
+restart = "always"
+
+[sandbox]
+tier = "none"
+net = "mesh-only"
+
+[deps]
+requires = ["native"]
+capabilities = []
